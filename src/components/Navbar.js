@@ -11,7 +11,7 @@ const Navbar = () => {
         bg="secondary"
         variant="dark"
       >
-        <ReactBootStrap.Navbar.Brand href="#home">
+        <ReactBootStrap.Navbar.Brand href="/">
           Quantic
         </ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -20,17 +20,20 @@ const Navbar = () => {
           className="justify-content-center"
         >
           <ReactBootStrap.Nav className="mr-auto ">
-            <ReactBootStrap.Nav.Link href="#Earnings">
+            <ReactBootStrap.Nav.Link href="/Earnings">
               Earnings
             </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="#necklace">
+            <ReactBootStrap.Nav.Link href="/necklace">
               Necklace
             </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="#sets">Sets</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav.Link href="/sets">Sets</ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
           <ReactBootStrap.Nav>
-            <ReactBootStrap.Nav.Link href="#add">
+            <ReactBootStrap.Nav.Link href="/add">
               <i className="fas fa-plus-square"></i>
+            </ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav.Link href="/dashboard">
+              Dashboard
             </ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
