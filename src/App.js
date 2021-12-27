@@ -1,7 +1,12 @@
-import "./App.css";
-
-function App() {
-  return <div className="App">I love you</div>;
-}
+import React from "react";
+import Navbar from "./components/Navbar";
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+      HI
+    </div>
+  );
+};
 
 export default App;
