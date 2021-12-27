@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Add = () => {
   const [data, setData] = useState({
-    filename: "",
+    filename: null,
     name: "",
     code: "",
     weight: "",
@@ -10,7 +10,8 @@ const Add = () => {
     charges: "",
     price: "",
   });
-  const { filename, name, code, weight, purity, charges, price } = data;
+  const [image, setImage] = useState(null);
+  let { filename, name, code, weight, purity, charges, price } = data;
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: [e.target.value] });
   };
@@ -21,7 +22,7 @@ const Add = () => {
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <input type="file" />
+        <input type="file" onChange={(e) => setImage(e.target.files[0])} />
         <br />
         <input
           type="text"
