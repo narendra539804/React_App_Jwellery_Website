@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 const Add = () => {
   const [data, setData] = useState({
-    filename: null,
+    // filename: null,
     name: "",
     code: "",
     weight: "",
@@ -10,20 +10,28 @@ const Add = () => {
     charges: "",
     price: "",
   });
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
   let { filename, name, code, weight, purity, charges, price } = data;
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: [e.target.value] });
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    axios
+      .post(
+        "https://mainpro-40e97-default-rtdb.firebaseio.com/client.json",
+        data
+      )
+      .then(() => alert("Added success"));
     console.log(data);
   };
+
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+        {/* <input type="file" onChange={(e) => setImage(e.target.files[0])} />
         <br />
+        */}
         <input
           type="text"
           placeholder="Enter the Name"
